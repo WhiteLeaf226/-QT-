@@ -27,10 +27,12 @@ public:
     void closeEvent(QCloseEvent *);
 
 private slots:
+    //显示群成员
     void show_group_member(QJsonObject);
 
     void on_sendbut_clicked();
-
+    
+    //显示群聊信息
     void show_group_text(QJsonObject);
 
 private:
