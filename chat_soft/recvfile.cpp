@@ -51,7 +51,7 @@ void RecvFile::recv_file()
         delete this->file;
         delete this->tcpsocket;
 
-        //发送完成
+        //接收完成
         emit recv_done();
     }
 }
