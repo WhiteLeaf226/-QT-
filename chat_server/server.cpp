@@ -706,8 +706,6 @@ void Server::send_flie_handler(int length, int port, int *f_fd, int *t_fd)
 			break; 
 		sum += size;
 		send(to_fd, buf, size, 0);
-		cout<<"size:"<<size<<endl;
-		cout<<"sum:"<<sum<<endl;
 		if(sum >= length)
 		{
 			cout<<"发送完毕"<<endl;
