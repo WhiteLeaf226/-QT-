@@ -67,7 +67,7 @@ void Chatlist::server_reply()
         client_private_chat_reply(obj.value("result").toString());
     else if(cmd == "private_chat")  //收到聊天信息
         client_chat_reply(obj);
-    else if(cmd == "get_group_member_reply")  //获取群成员
+    else if(cmd == "get_group_member_reply")  //获取群成员回复
         client_get_group_member_reply(obj);
     else if(cmd == "group_chat")  //收到群消息
         client_group_chat_reply(obj);
@@ -208,7 +208,7 @@ void Chatlist::on_groupList_double_clicked()
     groupWidgetList.push_back(g);
 }
 
-//获取群成员
+//显示群成员
 void Chatlist::client_get_group_member_reply(QJsonObject &obj)
 {
     emit signal_to_sub_widget_member(obj);
