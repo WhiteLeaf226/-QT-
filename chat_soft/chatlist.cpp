@@ -85,7 +85,7 @@ void Chatlist::server_reply()
 void Chatlist::client_login_reply(QString fri)
 {
     QString str = QString("%1好友上线").arg(fri);
-                      QMessageBox::information(this, "好友上限提醒", str);
+    QMessageBox::information(this, "好友上限提醒", str);
 }
 
 //点击添加好友按钮
