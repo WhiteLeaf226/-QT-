@@ -91,6 +91,7 @@ void ChatInfo::info_group_add_user(string group_name, string user_name)
 			GroupUser u;
 			u.groupuser_name = user_name;
 			it->li->push_back(u);
+			break;
 		}
 	}
 	
