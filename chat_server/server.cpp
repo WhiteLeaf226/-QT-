@@ -442,7 +442,7 @@ void Server::server_add_group(struct bufferevent *bev, Json::Value val)
 		}
 		return;
 	}
-	//判断用户是由在群里
+	//判断用户是否在群里
 	if(chatlist->info_user_in_group(val["user"].asString(),
 			val["group"].asString()))
 	{
