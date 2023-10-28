@@ -32,6 +32,7 @@ public:
 private slots:
     void on_sendbut_clicked();
 
+    //添加消息到消息框
     void show_text_slot(QJsonObject);
 
     void on_filebut_clicked();
