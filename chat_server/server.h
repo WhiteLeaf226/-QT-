@@ -27,32 +27,47 @@ public:
 	~Server();
 private:
 	//事件 客户端文件描述符 客户端地址 地址大小  传入参数
+	//evconnlistener对象回调函数
 	static void listener_cb(struct evconnlistener *listener, 
 			evutil_socket_t fd, struct sockaddr *addr, 
 			int socklen, void *arg);
+	//用户线程调用函数
 	static void client_handler(int fd);
+	//文件线程调用函数
 	static void send_flie_handler(int, int, int*, int*);
+	//接收数据
 	static void read_cb(struct bufferevent *bev, void *ctx);
+	//异常
 	static void event_cb(struct bufferevent *bev,
 			short what, void *ctx);
+	//用户注册
 	static void server_register(struct bufferevent *bev,
 			Json::Value val);
-	static void	server_login(struct bufferevent *bev, 
+	//用户登入
+	static void server_login(struct bufferevent *bev, 
 			Json::Value val);
+	//添加好友
 	static void server_add_friend(struct bufferevent *bev, 
 			Json::Value val);
+	//创建群
 	static void server_create_group(struct bufferevent *bev, 
 			Json::Value val);
+	//添加群
 	static void server_add_group(struct bufferevent *bev, 
 			Json::Value val);
+	//私聊
 	static void server_private_chat(struct bufferevent *bev, 
 			Json::Value val);
+	//群聊
 	static void server_group_chat(struct bufferevent *bev, 
 			Json::Value val);
+	//获取群成员
 	static void server_get_group_member(struct bufferevent *bev,
 			Json::Value val);
+	//用户下线
 	static void server_user_offline(struct bufferevent *bev,
 			Json::Value val);
+	//发送文件
 	static void server_send_file(struct bufferevent *bev,
 			Json::Value val);
 
