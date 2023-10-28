@@ -22,7 +22,9 @@ public:
     ~Widget();
 
 private slots:
+    //连接成功
     void connect_success();
+    //接收到了消息
     void server_reply();
 
     void on_registerbut_clicked();
@@ -30,7 +32,9 @@ private slots:
     void on_loginbut_clicked();
 
 private:
+    //注册回复
     void client_register_handler(QString);
+    //登入回复
     void client_login_handler(QString, QString, QString);
 
 private:
