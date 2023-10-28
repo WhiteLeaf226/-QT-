@@ -672,11 +672,11 @@ void Server::send_flie_handler(int length, int port, int *f_fd, int *t_fd)
 	setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
 
 	//接收缓冲区
-	int nRecvBuf = MAXSIZE;
+	int nRecvBuf = MAXSIZE * 2;
 	setsockopt(sockfd, SOL_SOCKET, SO_RCVBUF,
 			(const char*)&nRecvBuf, sizeof(int));
 	//发送缓冲区
-	int nSendBuf = MAXSIZE;
+	int nSendBuf = MAXSIZE * 2;
 	setsockopt(sockfd, SOL_SOCKET, SO_SNDBUF,
 			(const char*)&nSendBuf, sizeof(int));
 
