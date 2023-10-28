@@ -15,7 +15,7 @@ CreateGroup::~CreateGroup()
     delete ui;
 }
 
-//点击取消安妮
+//点击取消按钮
 void CreateGroup::on_cancelbut_clicked()
 {
     this->close();
