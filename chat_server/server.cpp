@@ -600,8 +600,6 @@ void Server::server_group_chat(struct bufferevent *bev, Json::Value val)
 void Server::server_user_offline(struct bufferevent *bev, Json::Value val)
 {	
 	//向链表中删除用户
-	User u = {val["user"].asString(), bev};
-
 	for(list<User>::iterator it = chatlist->online_user->begin();
 			it != chatlist->online_user->end(); ++it)
 	{
