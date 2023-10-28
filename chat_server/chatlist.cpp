@@ -41,17 +41,6 @@ ChatInfo::ChatInfo()
 		g.li->push_back(u);
 		group_info->push_back(g);
 	}
-	
-	/*
-	for(list<Group>::iterator it = group_info->begin(); it != group_info->end(); ++it)
-	{
-		cout<<"群名字"<<it->group_name<<endl;
-		for(list<GroupUser>::iterator i = it->li->begin(); i != it->li->end(); ++i)
-		{
-			cout<<i->groupuser_name<<endl;
-		}
-	}
-	*/
 
 	mydatabase->my_database_disconnect();
 
