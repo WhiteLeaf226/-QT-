@@ -15,7 +15,6 @@ public:
     void working();
 
 signals:
-    void recv_connect_timeout();
     void recv_done();
     void start_recv();
 public slots:
