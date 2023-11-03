@@ -34,13 +34,12 @@ GroupChat::~GroupChat()
 //显示群成员
 void GroupChat::show_group_member(QJsonObject obj)
 {
-    if(obj.value("cmd").toString() == "get_group_member_reply")
-        if(obj.value("group").toString() == this->groupName)
-        {
-            QStringList strList = obj.value("member").toString().split("|");
-            for(int i = 0; i < strList.size(); i++)
-                ui->listWidget->addItem(strList.at(i));
-        }
+    if(obj.value("group").toString() == this->groupName)
+    {
+        QStringList strList = obj.value("member").toString().split("|");
+        for(int i = 0; i < strList.size(); i++)
+            ui->listWidget->addItem(strList.at(i));
+    }
 
 }
 
@@ -65,15 +64,14 @@ void GroupChat::on_sendbut_clicked()
 //将收到的消息显示在对话窗口
 void GroupChat::show_group_text(QJsonObject obj)
 {
-    if(obj.value("cmd").toString() == "group_chat")
-        if(obj.value("group").toString() == this->groupName)
-        {
-            if(this->isMinimized())
-                this->showNormal();
-            this->activateWindow();
-            ui->textEdit->append(obj.value("text").toString());
-            ui->textEdit->append("\n");
-        }
+    if(obj.value("group").toString() == this->groupName)
+    {
+        if(this->isMinimized())
+            this->showNormal();
+        this->activateWindow();
+        ui->textEdit->append(obj.value("text").toString());
+        ui->textEdit->append("\n");
+    }
 
 
 }
