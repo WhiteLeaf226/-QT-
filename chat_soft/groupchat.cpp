@@ -73,7 +73,6 @@ void GroupChat::show_group_text(QJsonObject obj)
         ui->textEdit->append("\n");
     }
 
-
 }
 
 void GroupChat::closeEvent(QCloseEvent *event)
